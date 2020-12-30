@@ -1,0 +1,11 @@
+.exercise {
+    background-color: rgb(170, 170, 170);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.muscle-group {
+    margin: 0 20px;
+    color: rgb(66, 66, 66)
+}
