@@ -11,7 +11,7 @@ function RoutineExercise(props) {
                 <h2>{name}</h2>
                 <p>{`Rest for ${time}`}</p>
                 {(muscle_groups.length > 0) &&
-                    muscle_groups.map((muscle_group) => <span className="muscle-group" key={uuidv4()}>{muscle_group.major_name}</span>)}
+                    muscle_groups.map((muscle_group) => <span className="muscle-group-name" key={uuidv4()}>{muscle_group.major_name}</span>)}
             </div>
         )
     }
@@ -23,7 +23,7 @@ function RoutineExercise(props) {
             <p>{`${reps} Reps with ${rep_break} break between reps`}</p>
             <p>{`${sets} Sets with ${set_break} break between sets`}</p>
             {(muscle_groups.length > 0) &&
-                muscle_groups.map((muscle_group) => <span className="muscle-group" key={uuidv4()}>{muscle_group.major_name}</span>)}
+                muscle_groups.map((muscle_group) => <span className="muscle-group-name" key={uuidv4()}>{muscle_group.major_name}</span>)}
         </div>
     )
 }

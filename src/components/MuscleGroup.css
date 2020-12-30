@@ -1,5 +1,6 @@
 .muscle-group {
     background-color: rgb(170, 170, 170);
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
+    max-width: 500px;
 }
