@@ -30,7 +30,7 @@ function Exercises({match}) {
 
     return(
         <div>
-            {typeof muscleGroup.major_name === "undefined" ? <h1>ALL EXERCISES</h1> : <h1>{muscleGroup.major_name} Exercises</h1>}
+            {typeof muscleGroup.major_name === "undefined" ? <h1>All Exercises</h1> : <h1>{muscleGroup.major_name} Exercises</h1>}
             <div>
                 {(exercises.length > 0) &&
                     exercises.map(exercise => <Exercise key={exercise.exercise_id} exercise={exercise} />)

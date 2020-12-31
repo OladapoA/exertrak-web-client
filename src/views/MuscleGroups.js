@@ -19,7 +19,7 @@ function MuscleGroups() {
 
     return(
         <div>
-            <h1>MUSCLE GROUPS</h1>
+            <h1>Muscle Groups</h1>
             <div>
                 {(items.length > 0) && 
                     items.map(muscleGroup => <MuscleGroup key={muscleGroup.muscle_group_id} muscleGroup={muscleGroup} />)

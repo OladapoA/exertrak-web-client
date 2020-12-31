@@ -19,7 +19,7 @@ function Routines() {
 
     return(
         <div>
-            <h1>ROUTINES</h1>
+            <h1>Routines</h1>
             <div>
                 {(items.length > 0) && 
                     items.map(routine => <Routine key={routine.routine_id} routine={routine} />)

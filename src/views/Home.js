@@ -4,7 +4,7 @@ function Home() {
 
     return(
         <div>
-            <h1>HOME PAGE</h1>
+            <h1>ExerTrak</h1>
             <div>
                 <p>Create, save and use Exercises</p>
             </div>
