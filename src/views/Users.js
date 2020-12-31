@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import User from "../components/User"
-import CreateUser from "../components/CreateUser"
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import User from "../components/User";
+import CreateUser from "../components/CreateUser";
 
 function Users({match}) {
 
@@ -20,11 +17,6 @@ function Users({match}) {
         setUsers(usersData);
 
     }
-
-    const [show, setShow] = useState(false);
-  
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     
     return(
         <div>
