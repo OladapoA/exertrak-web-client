@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Example() {
+function CreateUser() {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -11,25 +11,25 @@ function Example() {
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
+                Create a new user
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>New ExerTrak user</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Create
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 }
   
-export default Example;
+export default CreateUser;

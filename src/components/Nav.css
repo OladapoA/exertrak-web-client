@@ -13,6 +13,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    margin: 1rem;
 }
 
 .nav-style {
@@ -22,4 +23,5 @@ nav {
 
 .nav-style:hover {
     color: rgba(0, 255, 255, 0.678);
+    text-decoration: none;
 }
