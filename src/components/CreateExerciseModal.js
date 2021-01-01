@@ -20,22 +20,21 @@ function CreateExerciseModal() {
 
         if (type === "checkbox") {
             setExercise(prevExercise => {
-                const newMuscleGroupsIds = prevExercise.muscleGroupIds
+                const muscleGroupsIds = prevExercise.muscleGroupIds
                 
-                const ids = newMuscleGroupsIds.map((mGID) => {
-                    if (mGID.id == value){
-                        mGID.included = event.currentTarget.checked
-                        return {mGID}
+                muscleGroupsIds.map((muscleGroup) => {
+                    if (muscleGroup.id == value){
+                        muscleGroup.included = event.currentTarget.checked
+                        return {muscleGroup}
                     } else {
-                        return mGID
+                        return muscleGroup
                     }
                 })
-                console.log(ids)
 
                 // newMuscleGroupsIds[value] = event.currentTarget.checked
                 return {
                     ...prevExercise,
-                    muscleGroupIds: newMuscleGroupsIds
+                    muscleGroupIds: muscleGroupsIds
                 };
             });
         } else {
