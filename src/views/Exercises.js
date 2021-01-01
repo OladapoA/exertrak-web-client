@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Exercise from "../components/Exercise"
+import CreateExerciseModal from "../components/CreateExerciseModal"
 
 function Exercises({match}) {
 
@@ -36,6 +37,7 @@ function Exercises({match}) {
                     exercises.map(exercise => <Exercise key={exercise.exercise_id} exercise={exercise} />)
                 }
             </div>
+            <CreateExerciseModal />
         </div>
     )
 }

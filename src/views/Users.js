@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import User from "../components/User";
-import CreateUser from "../components/CreateUser";
 
 function Users({match}) {
 
@@ -26,7 +25,6 @@ function Users({match}) {
                     users.map(user => <User key={user.user_id} user={user} />)
                 }
             </div>
-            <CreateUser />
         </div>
     )
 }
