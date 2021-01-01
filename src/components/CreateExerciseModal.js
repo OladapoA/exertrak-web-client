@@ -21,7 +21,18 @@ function CreateExerciseModal() {
         if (type === "checkbox") {
             setExercise(prevExercise => {
                 const newMuscleGroupsIds = prevExercise.muscleGroupIds
-                newMuscleGroupsIds[value] = event.currentTarget.checked
+                
+                const ids = newMuscleGroupsIds.map((mGID) => {
+                    if (mGID.id == value){
+                        mGID.included = event.currentTarget.checked
+                        return {mGID}
+                    } else {
+                        return mGID
+                    }
+                })
+                console.log(ids)
+
+                // newMuscleGroupsIds[value] = event.currentTarget.checked
                 return {
                     ...prevExercise,
                     muscleGroupIds: newMuscleGroupsIds
@@ -45,7 +56,7 @@ function CreateExerciseModal() {
         const muscleGroupDataIds = []
         muscleGroupsData.forEach((muscleGroup) => {
             const id = muscleGroup.muscle_group_id;
-            muscleGroupDataIds[id] = false;
+            muscleGroupDataIds.push({id: id, muscleGroup: muscleGroup, included: false})
         })
 
         setExercise(prevExercise => {
@@ -71,43 +82,30 @@ function CreateExerciseModal() {
     };
 
     const handleCreate = () => {
-        // console.log(exercise);
+        const selectedMGs = exercise.muscleGroupIds.filter((muscleGroup) => {
+            return muscleGroup.included === true;
+        });
 
-        const testExercise = {
-            "name": "New Exercise",
-            "description": "New Exercise description",
-            "muscle_groups": [
-                {
-                    "muscle_group_id": 1,
-                    "major_name": "Quadriceps",
-                    "minor_name": null
-                },
-                {
-                    "muscle_group_id": 2,
-                    "major_name": "Hamstrings",
-                    "minor_name": null
-                },
-                {
-                    "muscle_group_id": 3,
-                    "major_name": "Calves",
-                    "minor_name": null
-                }
-            ]
+        const mGs = selectedMGs.map((mG) => {
+            return mG.muscleGroup;
+        });
+
+        const postObject = {
+            name: exercise.name,
+            description: exercise.description,
+            muscle_groups: mGs
         }
+        console.log(postObject);
 
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            // body: JSON.stringify(testExercise)
-            body: JSON.stringify(exercise)
+            body: JSON.stringify(postObject)
         };
-        fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
+        // fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
+        fetch('/api/v1/users/1/exercises', requestOptions)
             .then(response => response.json())
             .then(data => console.log(data));
-        
-        // fetch('/api/v1/users/1/exercises', requestOptions)
-        //     .then(response => response.json())
-        //     .then(data => console.log(data));
 
         handleClose();
     }
