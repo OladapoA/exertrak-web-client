@@ -10,6 +10,7 @@ import Routines from "./views/Routines";
 import Exercises from "./views/Exercises";
 import MuscleGroups from "./views/MuscleGroups";
 import Routine from "./views/RoutineSingle";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/muscle_groups" exact component={MuscleGroups}/>
           <Route path="/muscle_groups/:id/exercises" exact component={Exercises} type="muscle_group"/>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
